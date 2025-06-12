@@ -1,0 +1,40 @@
+
+
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addProduct } from './features/product'; 
+
+function App() {
+  const [title, setTitle] = useState('');
+  // const dispatch = useDispatch();
+
+  const products = useSelector((state) => state.products.items);
+
+  const handleAdd = () => {
+    if (!title.trim()) return;
+    dispatch(addProduct({ id: Date.now(), title }));
+    setTitle('');
+  };
+
+  console.log(products,"products")
+  return (
+    <div>
+      <h2>Redux Products</h2>
+      <input
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+        placeholder="Enter product name"
+      />
+      <button onClick={handleAdd}>Add Product</button>
+
+      <ul>
+        {products.map((product) => (
+          <li key={product.id}>{product.title}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default App;
+// App.js
