@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+nav{
+    height: 5rem;
+    width: 95%;
+    /* background-color: red; */
+    /* margin-top: 1rem; */
+    margin-left: 2rem;
+    display: flex;
+    border-radius: 10px;
+}
+nav a {
+    display: flex;
+    margin-left: 8rem;
+    margin-top: 1.3rem;
+    text-decoration: none;
+
+}
+nav a img{
+    height: 2rem;
+    width: 3rem;
+    margin-top: 0.1rem;
+}
+nav h1 {
+    font-size: 2rem;
+    margin-left: 0.2rem;
+    font-family: sans-serif;
+    color: black;
+}
+nav ul{
+    margin-left: 5rem;
+    display: flex;
+    margin-top: 2rem;
+    gap: 5rem;
+    list-style: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+nav li:hover{
+ text-decoration: underline gold ;
+}
+.icon{
+    height: 5rem;
+    width: 40%;
+    /* background-color: green; */
+    margin-left: 11rem;
+    gap: 4rem;
+}
+.part{
+    height: 36rem;
+    width: 100%;
+    position: absolute;
+}
+.text-sec{
+    height: 27rem;
+    width: 35%;
+   background-color: #FFF1CA;
+   margin-top: 4rem;
+   margin-left: 42rem;
+   border-radius: 10px;
+
+}
+.text-sec h4 {
+    padding-top: 4rem;
+    padding-left: 2rem;
+    font-size: 1.3rem;
+}
+.text-sec h1{
+    font-size: 3rem;
+    margin-left: 2rem;
+    font-weight: bolder;
+    font-family: sans-serif;
+    color: #7B4019;
+}
+.text-sec p {
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+.text-sec button{
+    height: 4rem;
+    width: 45%;
+    margin-top: 3rem;
+    margin-left: 2rem;
+    border-radius: 5px;
+    border: none;
+        color: white;
+        background-color:#7B4019 ;
+
+}
