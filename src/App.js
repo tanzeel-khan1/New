@@ -6,7 +6,7 @@ import { addProduct } from './features/product';
 
 function App() {
   const [title, setTitle] = useState('');
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const products = useSelector((state) => state.products.items);
 
