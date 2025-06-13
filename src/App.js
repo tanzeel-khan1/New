@@ -6,6 +6,7 @@
 
 import Browsetherange from "./figma/Browsetherange"
 import Nav from "./figma/Nav"
+import OurProduct from "./figma/OurProduct"
 
 // function App() {
 //   const [title, setTitle] = useState('');
@@ -45,7 +46,8 @@ function App(){
   return(
     <>
 <Nav/>
-<Browsetherange/>x
+<Browsetherange/>
+<OurProduct/>
 
     </>
   )

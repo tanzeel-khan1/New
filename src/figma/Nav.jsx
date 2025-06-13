@@ -27,9 +27,9 @@ function Nav(){
   </ul>
 <div className='icon'>
     <FontAwesomeIcon icon={faUser} style={{marginTop: '2rem'}} />
-<FontAwesomeIcon icon={faHeart} style={{marginTop: '2rem', marginLeft: '5rem'}} />
-<FontAwesomeIcon icon={faMagnifyingGlass} style={{marginTop: '2rem', marginLeft: '5rem'}} />
-<FontAwesomeIcon icon={faCartShopping} style={{marginTop: '2rem', marginLeft: '5rem'}} />
+<FontAwesomeIcon icon={faHeart} style={{marginTop: '2rem', marginLeft: '3rem'}} />
+<FontAwesomeIcon icon={faMagnifyingGlass} style={{marginTop: '2rem', marginLeft: '3rem'}} />
+<FontAwesomeIcon icon={faCartShopping} style={{marginTop: '2rem', marginLeft: '3rem' }} /> <span style={{marginLeft: ' 1rem', fontFamily: 'sans-serif', fontWeight: 'bold'}}>Login</span>
 </div>
    </nav>
    <img className='part' src={imageUrl1}/>
@@ -39,7 +39,7 @@ function Nav(){
         <h1 style={{marginTop: '1rem'}}>Discover our</h1>
         <h1>New collection</h1>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit hgfytru.?</p>
-        <p>Businessman and former   </p>
+        <p>Businessman and former Captain   </p>
         <button>Buy Now</button>
 
     </div>
