@@ -6,7 +6,6 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 
-
 function Nav(){
       const imageUrl = "/logo.png";
             const imageUrl1 = "/image.png";

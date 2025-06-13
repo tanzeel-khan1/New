@@ -10,6 +10,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 function OurProduct(){
 
 
+
+
+
+
     const [currentImages, setCurrentImages] = useState(Array(8).fill(true));
 
   useEffect(() => {
@@ -31,15 +35,15 @@ function OurProduct(){
 
 
 
-
-
     return(
         <>
         <h1 className="our">Our Product's</h1>
         <div className="product-con">
             <div className="conta">
+                 <div className="side">
+
+            </div>
                 <main className="sec-1" >
-{/* <img src={imageUrl1}/> */}
 <img  src={currentImages[0] ? "/image 1.png" : "/image 3.png"}/>
                 <h1>Syltherine</h1>
                 <p>stylish cafe chair</p>
@@ -98,7 +102,7 @@ function OurProduct(){
 
             </div>
             <div className="conta1">
-                <main className="sec-1">
+                <main className="sec-5">
                     <img  src={currentImages[0] ? "/image 6.png" : "https://furniro.archisacademy.com/assets/table1-3da3ce85.jpg"}/>
 
                 <h1>Grifo</h1>
@@ -112,7 +116,7 @@ function OurProduct(){
 </span>
                 <h3>Rp :- 1.500.000</h3>
                 </main>
-                 <main className="sec-2">
+                 <main className="sec-6">
 
                     <img src={currentImages [0] ? "https://furniro.archisacademy.com/assets/bedframe2-e1034b8b.jpg" : "https://furniro.archisacademy.com/assets/chair2-c83481e8.jpg"} />
                 <h1>Leviosa</h1>
@@ -126,7 +130,7 @@ function OurProduct(){
 </span>
                 <h3>Rp 1.500.000</h3>
                  </main>
-                <main className="sec-3">
+                <main className="sec-7">
                     <img src={currentImages [0] ? "https://furniro.archisacademy.com/assets/coffeetable1-9bd09ccf.jpg" : "https://furniro.archisacademy.com/assets/bedframe1-66429eda.jpg"} />
                 <h1>Pingky</h1>
                 <p>Cute bed set</p>
@@ -139,7 +143,7 @@ function OurProduct(){
 </span>
                 <h3>Rp 7.000.000</h3>
                 </main>
-                <main className="sec-4">
+                <main className="sec-8">
                      <img src={currentImages [0] ? "https://furniro.archisacademy.com/assets/bedframe1-66429eda.jpg" : "https://furniro.archisacademy.com/assets/wardrobe2-f21b4d35.jpg"} />
                 <h1>Potty</h1>
                 <p>Minimalist flower pot</p>
@@ -164,3 +168,25 @@ export default OurProduct;
 
 
 
+// import { useState } from "react";
+
+// function ProductCard({ title, description }) {
+//   const [showMore, setShowMore] = useState(true);
+
+//   return (
+//     <div className="border p-4 rounded shadow">
+//       <h2 className="text-xl font-bold">{title}</h2>
+//       <p>
+//         {showMore ? description : `${(description || "").slice(0, 50)}...`}
+//       </p>
+//       <button
+//         onClick={() => setShowMore(!showMore)}
+//         className="text-blue-500 mt-2"
+//       >
+//         {showMore ? "See Less" : "See More"}
+//       </button>
+//     </div>
+//   );
+// }
+
+// export default ProductCard;
