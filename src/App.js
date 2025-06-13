@@ -4,6 +4,7 @@
 // import { useDispatch, useSelector } from 'react-redux';
 // import { addProduct } from './features/product'; 
 
+import Browsetherange from "./figma/Browsetherange"
 import Nav from "./figma/Nav"
 
 // function App() {
@@ -44,6 +45,7 @@ function App(){
   return(
     <>
 <Nav/>
+<Browsetherange/>x
 
     </>
   )

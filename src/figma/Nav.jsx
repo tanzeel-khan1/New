@@ -15,7 +15,7 @@ function Nav(){
     return(
         <>
         <nav>
-  <a> <img src={imageUrl}/> <h1>Furniro</h1></a>
+  <a href='#'> <img src={imageUrl}/> <h1>Furniro</h1></a>
 
   <ul>
 <li>Home</li>
@@ -40,7 +40,7 @@ function Nav(){
         <h1>New collection</h1>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit hgfytru.?</p>
         <p>Businessman and former   </p>
-        <button>Started</button>
+        <button>Buy Now</button>
 
     </div>
    </div>
