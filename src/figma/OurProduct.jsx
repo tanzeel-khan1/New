@@ -1,19 +1,12 @@
 import "./OurProduct.css"
 import { useEffect, useState } from "react";
-
 import { faStar } from '@fortawesome/free-solid-svg-icons';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-
-
 function OurProduct(){
-
-
-
-
-
-
+const [showOptions, setShowOptions] = useState(false); 
+  const toggleOptions = () => {
+    setShowOptions((prev) => !prev);
+  };
     const [currentImages, setCurrentImages] = useState(Array(8).fill(true));
 
   useEffect(() => {
@@ -32,17 +25,34 @@ function OurProduct(){
          const imageUrl6 = "/image 6.png";
          const imageUrl7 = "/image 7.png";
          const imageUrl8 = "/image 8.png";
-
-
-
     return(
         <>
         <h1 className="our">Our Product's</h1>
         <div className="product-con">
             <div className="conta">
                  <div className="side">
+   
 
-            </div>
+   <div>
+      <div onClick={toggleOptions}>
+        <span>Options</span>
+        <span>{showOptions ? "−" : "+"}</span>
+      </div>
+      {showOptions && (
+        <div>
+          <input type="checkbox" id="scales" />
+          <label htmlFor="scales">Scales</label>
+          <br />
+          <input type="checkbox" id="babar" />
+          <label htmlFor="babar">Babar</label>
+        </div>
+      )}
+    </div>
+
+      
+</div>
+
+
                 <main className="sec-1" >
 <img  src={currentImages[0] ? "/image 1.png" : "/image 3.png"}/>
                 <h1>Syltherine</h1>
@@ -168,25 +178,3 @@ export default OurProduct;
 
 
 
-// import { useState } from "react";
-
-// function ProductCard({ title, description }) {
-//   const [showMore, setShowMore] = useState(true);
-
-//   return (
-//     <div className="border p-4 rounded shadow">
-//       <h2 className="text-xl font-bold">{title}</h2>
-//       <p>
-//         {showMore ? description : `${(description || "").slice(0, 50)}...`}
-//       </p>
-//       <button
-//         onClick={() => setShowMore(!showMore)}
-//         className="text-blue-500 mt-2"
-//       >
-//         {showMore ? "See Less" : "See More"}
-//       </button>
-//     </div>
-//   );
-// }
-
-// export default ProductCard;
