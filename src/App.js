@@ -6,6 +6,7 @@
 
 import BedRoom from "./figma/BedRoom"
 import Browsetherange from "./figma/Browsetherange"
+import FurniroFurniture from "./figma/FurniroFurniture"
 import Nav from "./figma/Nav"
 import OurProduct from "./figma/OurProduct"
 
@@ -50,6 +51,7 @@ function App(){
 <Browsetherange/>
 <OurProduct/>
 <BedRoom/>
+<FurniroFurniture/>
 
     </>
   )

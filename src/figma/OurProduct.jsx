@@ -407,7 +407,7 @@ function OurProduct() {
           </main>
         </div>
 
-        <button>Show More</button>
+        <button className="button">Show More</button>
       </div>
     </>
   );
