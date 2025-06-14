@@ -4,6 +4,7 @@
 // import { useDispatch, useSelector } from 'react-redux';
 // import { addProduct } from './features/product'; 
 
+import BedRoom from "./figma/BedRoom"
 import Browsetherange from "./figma/Browsetherange"
 import Nav from "./figma/Nav"
 import OurProduct from "./figma/OurProduct"
@@ -48,6 +49,7 @@ function App(){
 <Nav/>
 <Browsetherange/>
 <OurProduct/>
+<BedRoom/>
 
     </>
   )
