@@ -35,25 +35,67 @@ function LiveSearch() {
   };
 
   return (
-    <div style={{ padding: '20px', maxWidth: '400px', margin: '0 auto' }}>
-      <h2>🔍 Live Search (with API Call)</h2>
+    <div style={{
+      maxWidth: '500px',
+      margin: '40px auto',
+      padding: '20px',
+      borderRadius: '10px',
+      boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+      backgroundColor: '#ffffff',
+      fontFamily: 'Arial, sans-serif'
+    }}>
+      <h2 style={{
+        textAlign: 'center',
+        marginBottom: '20px',
+        color: '#333'
+      }}>
+        🔍 Live User Search
+      </h2>
+
       <input
         type="text"
         value={query}
-        placeholder="Type to search..."
+        placeholder="Search by name..."
         onChange={(e) => setQuery(e.target.value)}
-        style={{ padding: '10px', width: '100%' }}
+        style={{
+          width: '100%',
+          padding: '12px',
+          fontSize: '16px',
+          border: '1px solid #ccc',
+          borderRadius: '8px',
+          marginBottom: '15px',
+          outline: 'none',
+          boxSizing: 'border-box'
+        }}
       />
+
       {loading ? (
-        <p>Loading...</p>
+        <p style={{ textAlign: 'center', color: '#888' }}>Loading...</p>
       ) : (
-        <ul>
+        <ul style={{
+          listStyle: 'none',
+          padding: 0,
+          margin: 0
+        }}>
           {results.length > 0 ? (
             results.map(user => (
-              <li key={user.id}>{user.name}</li>
+              <li key={user.id} style={{
+                padding: '10px 15px',
+                borderBottom: '1px solid #eee',
+                fontSize: '15px',
+                color: '#444'
+              }}>
+                {user.name}
+              </li>
             ))
           ) : query ? (
-            <li>No results found</li>
+            <li style={{
+              padding: '10px',
+              textAlign: 'center',
+              color: '#999'
+            }}>
+              No results found.
+            </li>
           ) : null}
         </ul>
       )}
