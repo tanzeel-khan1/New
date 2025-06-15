@@ -1,14 +1,14 @@
-
+import Practice from "./api/Practice"
 
 // import React, { useState } from 'react';
 // import { useDispatch, useSelector } from 'react-redux';
 // import { addProduct } from './features/product'; 
 
-import BedRoom from "./figma/BedRoom"
-import Browsetherange from "./figma/Browsetherange"
-import FurniroFurniture from "./figma/FurniroFurniture"
-import Nav from "./figma/Nav"
-import OurProduct from "./figma/OurProduct"
+// import BedRoom from "./figma/BedRoom"
+// import Browsetherange from "./figma/Browsetherange"
+// import FurniroFurniture from "./figma/FurniroFurniture"
+// import Nav from "./figma/Nav"
+// import OurProduct from "./figma/OurProduct"
 
 // function App() {
 //   const [title, setTitle] = useState('');
@@ -47,11 +47,12 @@ import OurProduct from "./figma/OurProduct"
 function App(){
   return(
     <>
-<Nav/>
+{/* <Nav/>
 <Browsetherange/>
 <OurProduct/>
 <BedRoom/>
-<FurniroFurniture/>
+<FurniroFurniture/> */}
+<Practice/>
 
     </>
   )
