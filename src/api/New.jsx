@@ -1,51 +1,42 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const SignUpForm = () => {
+const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     setError("");
     setSuccess("");
 
     try {
-      const res = await axios.post("http://127.0.0.1:8000/signup", {
-        name,
-        email ,
+      const res = await axios.post("http://127.0.0.1:8000/login", {
+        email,
         password,
-
-
       });
 
-      setSuccess("Signup successful ✅");
-      setName("");
+      const token = res.data.access_token;
+      localStorage.setItem("auth-token", token);
+      setSuccess("Login successful ✅");
+
+      // Optionally redirect or clear fields
       setEmail("");
       setPassword("");
     } catch (err) {
       setError(
-        err.response?.data?.detail || "Signup failed ❌. Server error."
+        err.response?.data?.detail || "Login failed ❌. Server error."
       );
     }
   };
 
   return (
     <div style={styles.container}>
-      <h2>Sign Up</h2>
+      <h2>Login</h2>
       <form onSubmit={handleSubmit} style={styles.form}>
-        <input
-          type="text"
-          placeholder="Full Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          style={styles.input}
-          required
-        />
         <input
           type="email"
           placeholder="Enter email"
@@ -62,7 +53,7 @@ const SignUpForm = () => {
           style={styles.input}
           required
         />
-        <button type="submit" style={styles.button}>Sign Up</button>
+        <button type="submit" style={styles.button}>Login</button>
 
         {error && <p style={styles.error}>{error}</p>}
         {success && <p style={styles.success}>{success}</p>}
@@ -94,7 +85,7 @@ const styles = {
   },
   button: {
     padding: "10px",
-    backgroundColor: "#28a745",
+    backgroundColor: "#007bff",
     color: "white",
     border: "none",
     borderRadius: "5px",
@@ -110,4 +101,4 @@ const styles = {
   },
 };
 
-export default SignUpForm;
+export default LoginForm;
