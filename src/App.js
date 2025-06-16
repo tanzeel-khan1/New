@@ -1,4 +1,5 @@
-import Practice from "./api/Practice"
+// import Practice from "./api/Practice"
+import Practice1 from "./api/Practice1"
 
 // import React, { useState } from 'react';
 // import { useDispatch, useSelector } from 'react-redux';
@@ -52,7 +53,7 @@ function App(){
 <OurProduct/>
 <BedRoom/>
 <FurniroFurniture/> */}
-<Practice/>
+<Practice1/>
 
     </>
   )

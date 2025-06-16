@@ -22,7 +22,6 @@ const SignUpForm = () => {
 
 
       });
-
       setSuccess("Signup successful ✅");
       setName("");
       setEmail("");

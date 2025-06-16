@@ -1,7 +1,111 @@
+import axios from "axios";
+import { useState } from "react"
+
 function Practice1(){
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [name, setName] = useState("");
+    const [error, setError] = useState("");
+    const [success, setSuccess] = useState("");
+
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+
+        setError("");
+        setEmail("");
+        try{
+            const res = await axios.get('', {
+                name,
+            email,
+            password,
+            });
+setSuccess("sign sucessfull");
+setName("");
+setEmail("");
+setPassword("");
+        } catch (err){
+            setError(
+             err.response?.data?.detail || "Signup failed ❌. Server error."
+            );
+        }
+    }
     return(
         <>
+        <div style={styles.container}>
+      <h2>Sign Up</h2>
+      <form onSubmit={handleSubmit} style={styles.form}>
+        <input
+          type="text"
+          placeholder="Full Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          style={styles.input}
+          required
+        />
+        <input
+          type="email"
+          placeholder="Enter email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          style={styles.input}
+          required
+        />
+        <input
+          type="password"
+          placeholder="Enter password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          style={styles.input}
+          required
+        />
+        <button type="submit" style={styles.button}>Sign Up</button>
+
+        {error && <p style={styles.error}>{error}</p>}
+        {success && <p style={styles.success}>{success}</p>}
+      </form>
+    </div>
         </>        
     )
 }
+
+
+const styles = {
+  container: {
+    width: "320px",
+    margin: "80px auto",
+    padding: "20px",
+    border: "1px solid #ccc",
+    borderRadius: "8px",
+    backgroundColor: "#f9f9f9",
+    textAlign: "center",
+  },
+  form: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "12px",
+  },
+  input: {
+    padding: "10px",
+    fontSize: "15px",
+    borderRadius: "5px",
+    border: "1px solid #ccc",
+  },
+  button: {
+    padding: "10px",
+    backgroundColor: "#28a745",
+    color: "white",
+    border: "none",
+    borderRadius: "5px",
+    cursor: "pointer",
+  },
+  error: {
+    color: "red",
+    marginTop: "10px",
+  },
+  success: {
+    color: "green",
+    marginTop: "10px",
+  },
+};
 export default Practice1
