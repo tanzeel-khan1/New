@@ -1,38 +1,40 @@
+import React, { useState } from "react";
 import axios from "axios";
-import { useState } from "react"
 
-function Practice1(){
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [name, setName] = useState("");
-    const [error, setError] = useState("");
-    const [success, setSuccess] = useState("");
+const SignUpForm = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    setError("");
+    setSuccess("");
+
+    try {
+      const res = await axios.post("http://127.0.0.1:8000/signup", {
+        name,
+        email ,
+        password,
 
 
-    const handleSubmit = async (e) => {
-        e.preventDefault()
-
-        setError("");
-        setEmail("");
-        try{
-            const res = await axios.get('', {
-                name,
-            email,
-            password,
-            });
-setSuccess("sign sucessfull");
-setName("");
-setEmail("");
-setPassword("");
-        } catch (err){
-            setError(
-             err.response?.data?.detail || "Signup failed ❌. Server error."
-            );
-        }
+      });
+      setSuccess("Signup successful ✅");
+      setName("");
+      setEmail("");
+      setPassword("");
+    } catch (err) {
+      setError(
+        err.response?.data?.detail || "Signup failed ❌. Server error."
+      );
     }
-    return(
-        <>
-        <div style={styles.container}>
+  };
+
+  return (
+    <div style={styles.container}>
       <h2>Sign Up</h2>
       <form onSubmit={handleSubmit} style={styles.form}>
         <input
@@ -65,10 +67,8 @@ setPassword("");
         {success && <p style={styles.success}>{success}</p>}
       </form>
     </div>
-        </>        
-    )
-}
-
+  );
+};
 
 const styles = {
   container: {
@@ -108,4 +108,5 @@ const styles = {
     marginTop: "10px",
   },
 };
-export default Practice1
+
+export default SignUpForm;
