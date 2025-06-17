@@ -1,10 +1,9 @@
 // import Practice from "./api/Practice"
-import Practice1 from "./api/Practice1"
-
+// import Practice1 from "./api/Practice1"
 // import React, { useState } from 'react';
 // import { useDispatch, useSelector } from 'react-redux';
 // import { addProduct } from './features/product'; 
-
+import UserCard from './component/UserCard'
 // import BedRoom from "./figma/BedRoom"
 // import Browsetherange from "./figma/Browsetherange"
 // import FurniroFurniture from "./figma/FurniroFurniture"
@@ -53,7 +52,9 @@ function App(){
 <OurProduct/>
 <BedRoom/>
 <FurniroFurniture/> */}
-<Practice1/>
+{/* <Practice1/> */}
+{/* <UserCard/> */}
+<UserCard/>
 
     </>
   )

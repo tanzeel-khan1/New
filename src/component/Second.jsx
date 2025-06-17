@@ -1,14 +1,9 @@
-import { useNavigate } from "react-router-dom";
-const Second = () => {
-  const navigate = useNavigate();
-
-  const goContact = () => {
-    navigate("/First"); 
-  };
+const Second = (props) => {
 
   return (
     <>
-      <button onClick={goContact}>Go to UserCard</button>
+    {props.children}
+    gyryuguof
     </>
   );
 }
