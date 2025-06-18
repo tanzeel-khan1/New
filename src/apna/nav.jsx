@@ -3,18 +3,23 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { faUserLarge } from "@fortawesome/free-solid-svg-icons";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import React, { useState } from "react";
 
 
 
 
 function Nav() {
+   const [liked, setLiked] = useState(false);
+
+  const handleClick = () => {
+    setLiked(!liked);
+  };
     return (
         <>
-        <nav className="h-[5rem] w-[90%] bg-[#C0C9EE] ml-[3.3rem] mt-[1rem] rounded-[10px] flex  position: fixed;
+        <nav className="h-[5rem] w-[90%] bg-[#C0C9EE] ml-[3.3rem] mt-[1rem] rounded-[10px] flex  position-[fixed];
 " >
          <a href="#" className="flex font-normal mt-[1.3rem] ml-[3rem] text-[1.3rem] scale-110 text-[#131D4F] " > Apna<h1 className="font-black text-blue-400 scale-200 ">X</h1>Hai</a>
         <ul className="flex gap-[2rem] ml-[3rem] mt-[1.5rem]">
-        {/* <li className="cursor-pointer hover:[underline]">Home</li> */}
 <li className="cursor-pointer text-gray-700 hover:underline hover:text-blue-600">Home</li>
 
         <li className="cursor-pointer text-gray-700 hover:underline hover:text-blue-600">About</li>
@@ -49,7 +54,14 @@ function Nav() {
 </div>
 <button className="h-[2rem] w-[15%] bg-[brown] mt-[4rem] ml-[7rem] rounded-[10px] text-[#FFC107] font-bold">Get the coupen</button>
 
-
+ {/* <button onClick={handleClick}
+      className={`text-white text-xl px-6 py-3 rounded-lg transition-colors duration-300 ${
+        liked ? "bg-red-500" : "bg-gray-300"
+      }`}
+    >
+      Like
+    </button> */}
+    
 </div>
 
         </>
