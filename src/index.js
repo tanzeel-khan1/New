@@ -25,9 +25,22 @@
 //   </Provider>
 // );
 
+// import ReactDOM from 'react-dom/client';
+// import { Provider } from 'react-redux';
+// import App from './App';
+// import Store from './app/Store';
+
+// ReactDOM.createRoot(document.getElementById('root')).render(
+//   <Provider store={Store}>
+//     <App />
+//   </Provider>
+// );
+// import './index.css';
+
+import './index.css';   // Tailwind css import pehle
+
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
-// import Store from './app/Store';
 import App from './App';
 import Store from './app/Store';
 

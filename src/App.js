@@ -3,12 +3,14 @@
 // import React, { useState } from 'react';
 // import { useDispatch, useSelector } from 'react-redux';
 // import { addProduct } from './features/product'; 
-import UserCard from './component/UserCard'
+// import UserCard from './component/UserCard'
 // import BedRoom from "./figma/BedRoom"
 // import Browsetherange from "./figma/Browsetherange"
 // import FurniroFurniture from "./figma/FurniroFurniture"
 // import Nav from "./figma/Nav"
 // import OurProduct from "./figma/OurProduct"
+
+import Nav from "./apna/nav"
 
 // function App() {
 //   const [title, setTitle] = useState('');
@@ -54,8 +56,8 @@ function App(){
 <FurniroFurniture/> */}
 {/* <Practice1/> */}
 {/* <UserCard/> */}
-<UserCard/>
-
+{/* <UserCard/> */}
+<Nav/>
     </>
   )
 }
