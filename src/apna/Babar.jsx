@@ -155,14 +155,18 @@ const products = [ {
       id: 1,
       img: "https://i.ebayimg.com/thumbs/images/g/ScAAAOSwXl1mj7C~/s-l960.webp",
       des: "outdoor cooking",
-      price: "123"
+      price: "123",
+              add: "Add To Cart"
+
 
     },
     {
       id: 2,
       img: "https://i.ebayimg.com/thumbs/images/g/poAAAOSwWu5kWViF/s-l225.webp",
       des: "patio furniture",
-          price: "173"
+          price: "173",
+                  add: "Add To Cart"
+
 
 
     },
@@ -170,14 +174,18 @@ const products = [ {
       id: 3,
       img: "https://i.ebayimg.com/thumbs/images/g/3qYAAOSwllRnUTzX/s-l960.webp",
       des: "Firepits",
-      price: "133"
+      price: "133",
+              add: "Add To Cart"
+
 
     },
     {
       id: 4,
       img: "https://i.ebayimg.com/images/g/oskAAOSw9MRduA2E/s-l960.jpg",
       des: "hedge trimmers",
-      price: "223"
+      price: "223",
+              add: "Add To Cart"
+
 
     },
     {
@@ -185,13 +193,17 @@ const products = [ {
       img: "https://i.ebayimg.com/thumbs/images/g/ONQAAOSwWTRn4M7U/s-l960.webp",
       des: "Garden tools",
             price: "223"
+            ,        add: "Add To Cart"
+
 
     },
     {
       id: 6,
       img: "https://i.ebayimg.com/thumbs/images/g/sYkAAOSwl~dn0aTx/s-l960.webp",
       des: "Outdoor rugs",
-      price: "193"
+      price: "193",
+              add: "Add To Cart"
+
 
 
     },
@@ -199,7 +211,9 @@ const products = [ {
       id: 7,
       img: "https://i.ebayimg.com/thumbs/images/g/8AUAAOSwzjRn~4xN/s-l960.webp",
       des: "Pools",
-     price: "11123"
+     price: "11123",
+             add: "Add To Cart"
+
 
 
     },
@@ -207,7 +221,9 @@ const products = [ {
         id: 8,
         img: "https://i.ebayimg.com/thumbs/images/g/HS0AAOSwkfFmA7qV/s-l960.webp",
         des: "Storage",
-         price: "523"
+         price: "523",
+                 add: "Add To Cart"
+
 
 
     },
@@ -215,14 +231,17 @@ const products = [ {
         id: 9,
         img: "https://i.ebayimg.com/images/g/uu4AAOSwkNNf-DU-/s-l500.webp",
 des:"Soup Dispenser",
-      price: "11223"
+      price: "11223",
+              add: "Add To Cart"
+
 
     },
     {
         id: 10,
         img: "https://i.ebayimg.com/images/g/A~IAAOSw6H5nygjv/s-l1600.webp",
         des: "Food factory",
-        price: "1123"
+        price: "1123",
+        add: "Add To Cart"
 
 
     },
@@ -271,7 +290,7 @@ des:"Soup Dispenser",
           {products.map((item) => (
             <div
               key={item.id}
-              className="h-[34rem] w-[22%] bg-gray-100 rounded-[10px] shadow-md p-2 flex flex-col items-center">
+              className="h-[40rem] w-[22%] bg-gray-100 rounded-[10px] shadow-md p-2 flex flex-col items-center">
               <img
                 className="h-[20rem] w-[90%] rounded-[10%] mt-[1rem]"
                 src={item.img}
@@ -280,16 +299,17 @@ des:"Soup Dispenser",
               <h3 className="text-2xl text-center text-yellow-500 mt-[0.3rem]">
                 ${item.price}
               </h3>
-              <h2 className="text-center mb-2">Hope You Like this Product</h2>
+              <button onClick={() => alert("Deliver on Your House in just 3  Hour's")} className="h-[2rem] mt-[1rem] w-[60%] rounded-[10px] bg-blue-600 text-white">{item.add}</button>
+              <h2 className="text-center mt-[1rem]">Hope You Like this Product</h2>
 
               <input
                 type="text"
                 value={inputs[item.id] || ""}
                 onChange={(e) => handleInputChange(item.id, e.target.value)}
                 placeholder="Type here"
-                className="border p-2 rounded w-[80%] mb-2"/>
+                className="border p-2 rounded w-[80%] mt-2"/>
               <button
-                className="bg-blue-400 text-white px-4 py-2 rounded"
+                className="bg-blue-400 text-white px-4 py-2 rounded mt-[1rem]" 
                 onClick={() => handleClick(item, inputs[item.id] || "")}>
                 {thanks[item.id] ? "Thanks!" : "Send"}
               </button>
