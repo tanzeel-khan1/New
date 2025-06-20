@@ -54,13 +54,7 @@ function Nav() {
 </div>
 <button className="h-[2rem] w-[15%] bg-[brown] mt-[4rem] ml-[7rem] rounded-[10px] text-[#FFC107] font-bold">Get the coupen</button>
 
- {/* <button onClick={handleClick}
-      className={`text-white text-xl px-6 py-3 rounded-lg transition-colors duration-300 ${
-        liked ? "bg-red-500" : "bg-gray-300"
-      }`}
-    >
-      Like
-    </button> */}
+ 
     
 </div>
 

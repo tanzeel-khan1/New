@@ -102,14 +102,13 @@ function Second() {
         {products.slice(0, visibleCount).map((item) => (
           <div
             key={item.id}
-            className="h-[20rem] w-[16%] grid bg-gray-100 rounded-[10px] hover:scale-110 transition duration-{ms}
+            className="h-[20rem] w-[16%] grid bg-gray-100 rounded-[10px] hover:scale-105 transition duration-{ms}
  shadow-md  shadow-[rgba(3,2,4,0.3)]
 ">
             <img
               className="h-[10rem] w-[50%] rounded-[50%] mt-[2rem] mx-auto"
               src={item.img}/>
             <h1 className="text-center mt-[0.1rem] font-semibold">{item.des}</h1>
-            {/* <button onClick={() => goNav()}>{item.button}</button> */}
              <button
               onClick={() => goNav()}
               className=" shadow-lg shadow-[rgba(173,216,230,0.8)]   px-4 py-2 bg-blue-500 h-[3rem] text-white mt-[0.2rem] rounded hover:bg-blue-600 w-[60%] mx-auto mt-auto">
