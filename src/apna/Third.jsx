@@ -85,7 +85,7 @@ function Third(){
       ];
     return(
         <>
-        <div className="h-[20rem] w-[100%] bg-[red] mt-[5rem] bg-[#ff8806] flex">
+        <div className="h-[20rem] w-[100%]  mt-[5rem] bg-[#ff8806] flex">
         
         <div className="h-[20rem] w-[50%] ">
     <h1 className="font-bold text-3xl pt-[4rem] pl-[6rem] text-[#562501]">Sell and prep for summer</h1>
