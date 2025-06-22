@@ -113,7 +113,7 @@ className="h-[10rem] w-[70%] ml-[2rem] rounded-[20px] "
         </div>
 
 
-{/* Import */}
+
 <h1 className="text-2xl font-bold mt-[2rem] ml-[3rem] absolute">
         Magical Product's
       </h1>
