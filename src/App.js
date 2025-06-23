@@ -16,7 +16,6 @@ function App() {
 
   return (
     <BrowserRouter>
-      {/* Pass cartCount as prop */}
       <Nav cartCount={cartItems.length} />
 
       <Routes>
@@ -35,7 +34,7 @@ function App() {
           element={<Babar onAddToCart={handleAddToCart} />}
         />
 
-        <Route path="/shaheen" element={<Shaheen />} />
+        <Route path="/shaheen" element={<Shaheen  onAddToCart={handleAddToCart} />} />
       </Routes>
     </BrowserRouter>
   );

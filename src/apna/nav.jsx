@@ -6,7 +6,7 @@ import { faMagnifyingGlass, faUserLarge, faCartShopping, faHeart } from "@fortaw
 function Nav({ cartCount }) {
   return (
     <>
-      <nav className=" h-[5rem] w-[90%] bg-[#C0C9EE] ml-[3.3rem] mt-[1rem] rounded-[10px] flex">
+      <nav className="h-[5rem] w-[90%] bg-[#C0C9EE] ml-[3.3rem] mt-[1rem] rounded-[10px] flex">
         <a href="#" className="flex font-normal mt-[1.3rem] ml-[3rem] text-[1.3rem] scale-110 text-[#131D4F]">
           Apna<h1 className="font-black text-blue-400 scale-200">X</h1>Hai
         </a>
@@ -42,7 +42,7 @@ function Nav({ cartCount }) {
         </section>
       </nav>
 
-      <div className="h-[8rem] w-[90%] bg-[#FFC107] ml-[3.3rem] mt-[6rem] rounded-[10px] flex">
+      <div className="h-[8rem] w-[90%] bg-[#FFC107] ml-[3.3rem] mt-[3rem] rounded-[10px] flex">
         <div className="grid h-[8rem ] w-[70%] ">
           <h1 className="text-[brown] text-2xl font-bold mt-[2.4rem] ml-[3rem] absolute">
             Own a Lengency with 10% off
