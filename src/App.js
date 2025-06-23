@@ -1,18 +1,71 @@
+// import React, { useState } from 'react';
+// import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+// import Nav from "./apna/nav"
+// import Second from "./apna/Second";
+// import Babar from './apna/Babar';
+// import Third from './apna/Third';
+// import Shaheen from './apna/Shaheen';
+// import Cart from './apna/Cart'; 
+
+// function App() {
+//   const [cartItems, setCartItems] = useState([]);
+
+  
+//   const handleAddToCart = (product) => {
+//     setCartItems((prevCartItems) => [...prevCartItems, product]);
+//   };
+
+//   return (
+//     <BrowserRouter>
+//       <Nav cartCount={cartItems.length} />
+
+     
+//       <Routes>
+      
+//         <Route
+//           path="/"
+//           element={
+//             <>
+//               <Second />
+//               <Third />
+//             </>
+//           } />
+
+//         <Route
+//           path="/babar"
+//           element={<Babar onAddToCart={handleAddToCart} />}/>
+
+    
+//         <Route
+//           path="/shaheen"
+//           element={<Shaheen onAddToCart={handleAddToCart} />}/>
+
+    
+//         <Route
+//           path="/cart"
+//           element={<Cart cartItems={cartItems} />} />
+//       </Routes>
+      
+//     </BrowserRouter>
+//   );
+// }
+
+// export default App;
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-// import Nav from "./apna/Nav";
-// import Nav from "./apna/Nav"
-import Nav from "./apna/nav"
+
+import Nav from "./apna/nav";
 import Second from "./apna/Second";
 import Babar from './apna/Babar';
 import Third from './apna/Third';
 import Shaheen from './apna/Shaheen';
-import Cart from './apna/Cart'; 
+import Cart from './apna/Cart';
+import Profile from './apna/Profile';   
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
 
-  
   const handleAddToCart = (product) => {
     setCartItems((prevCartItems) => [...prevCartItems, product]);
   };
@@ -21,9 +74,7 @@ function App() {
     <BrowserRouter>
       <Nav cartCount={cartItems.length} />
 
-     
       <Routes>
-      
         <Route
           path="/"
           element={
@@ -31,23 +82,29 @@ function App() {
               <Second />
               <Third />
             </>
-          } />
+          }
+        />
 
         <Route
           path="/babar"
-          element={<Babar onAddToCart={handleAddToCart} />}/>
+          element={<Babar onAddToCart={handleAddToCart} />}
+        />
 
-    
         <Route
           path="/shaheen"
-          element={<Shaheen onAddToCart={handleAddToCart} />}/>
+          element={<Shaheen onAddToCart={handleAddToCart} />}
+        />
 
-    
         <Route
           path="/cart"
-          element={<Cart cartItems={cartItems} />} />
+          element={<Cart cartItems={cartItems} />}
+        />
+
+        <Route
+          path="/profile"    
+          element={<Profile />}
+        />
       </Routes>
-      
     </BrowserRouter>
   );
 }
