@@ -15,7 +15,7 @@ const Profile = () => {
   };
 useEffect(() => {
   if (!localStorage.getItem("userName")) {
-    navigate("/");   // agar user login nahi hai to home pe le jao
+    navigate("/");   
   }
 }, []);
 
