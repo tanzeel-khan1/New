@@ -95,9 +95,11 @@ function Nav({ cartCount }) {
             Save on select watches from Rolex, OMEGA, and more. |
             <span className="font-semibold "> Ends 6/24. Max $700 off orders $500+. 2x use.</span>
           </p>
+
+
         </div>
         <button className="h-[2rem] w-[10rem] bg-[brown] text-[#FFC107] font-bold rounded-[10px]">
-          Get the coupon
+               Get the coupon
         </button>
       </div>
 

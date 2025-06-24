@@ -22,12 +22,22 @@ function Babar({ onAddToCart }) {
           <h1 className="text-center mt-[1rem] font-semibold">{item.des}</h1>
           <h3 className="text-2xl text-center text-yellow-500 mt-[0.3rem]">${item.price}</h3>
 
-          <button
-            onClick={() => onAddToCart(item)}
+          {/* <button
+            onClick={() =>  onAddToCart(item)
+            }
             className="h-[2rem] mt-[1rem] w-[60%] rounded-[10px] bg-blue-600 text-white"
           >
             Add To Cart
-          </button>
+          </button> */}
+<button
+  onClick={() => {
+    alert("Added to cart!");
+    onAddToCart(item);
+  }}
+  className="h-[2rem] mt-[1rem] w-[60%] rounded-[10px] bg-blue-600 text-white"
+>
+  Add To Cart
+</button>
 
           <h2 className="text-center mt-[1rem]">You talk about this product</h2>
           <input

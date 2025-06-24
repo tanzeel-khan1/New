@@ -141,6 +141,8 @@ className="h-[10rem] w-[70%] ml-[2rem] rounded-[20px] "
               className=" shadow-lg shadow-[rgba(173,216,230,0.8)]   px-4 py-2 bg-blue-500 h-[3rem] text-white mt-[0.2rem] rounded hover:bg-blue-600 w-[60%] mx-auto mt-auto">
              {item.button}
            </button>
+          
+
           </div>
         ))}
       </div>
