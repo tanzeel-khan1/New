@@ -14,6 +14,42 @@ function Babar({ onAddToCart }) {
     { id: 10, img: "https://i.ebayimg.com/images/g/A~IAAOSw6H5nygjv/s-l1600.webp", des: "Food factory", price: "1123" },
   ];
 
+  const [inputs, setInputs] = useState({});
+    const [thanks, setThanks] = useState({}); 
+  
+    const handleInputChange = (id, value   ) => {
+      setInputs((prev) => ({
+        ...prev,
+        [id]: value,
+      }));
+    };
+  
+    const handleClick = (item, inputData) => {
+      const dataToSave = {
+        product: item,
+        input: inputData,
+      };
+      localStorage.setItem("myProduct", JSON.stringify(dataToSave));
+  
+    setInputs((prev) => ({
+        ...prev,
+        [item.id]: "",
+      }));
+  
+      setThanks((prev) => ({
+        ...prev,
+        [item.id]: true,
+      }));
+  
+      
+      setTimeout(() => {
+        setThanks((prev) => ({
+          ...prev,
+          [item.id]: false,
+        }));
+      }, 5000);
+    };
+  
   return (
     <div className="flex flex-wrap gap-6 mt-[2rem] justify-center">
       {products.map((item) => (
@@ -29,7 +65,16 @@ function Babar({ onAddToCart }) {
           >
             Add To Cart
           </button> */}
-<button
+{/* <button
+  onClick={() => {
+    alert("Added to cart!");
+    onAddToCart(item);
+  }}
+  className="h-[2rem] mt-[1rem] w-[60%] rounded-[10px] bg-blue-600 text-white"
+>
+  Add To Cart
+</button> */}
+ <button
   onClick={() => {
     alert("Added to cart!");
     onAddToCart(item);
@@ -39,15 +84,21 @@ function Babar({ onAddToCart }) {
   Add To Cart
 </button>
 
+
           <h2 className="text-center mt-[1rem]">You talk about this product</h2>
           <input
             type="text"
             placeholder="Type here"
             className="border p-2 rounded w-[80%] mt-2"
           />
-          <button className="bg-blue-400 text-white px-4 py-2 rounded mt-[1rem]">
+          {/* <button className="bg-blue-400 text-white px-4 py-2 rounded mt-[1rem]">
             Send
-          </button>
+          </button> */}
+            <button
+                className="bg-blue-400 text-white px-4 py-2 rounded mt-[1rem]" 
+                onClick={() => handleClick(item, inputs[item.id] || "")}>
+                {thanks[item.id] ? "Thanks!" : "Send"}
+              </button>
         </div>
       ))}
     </div>

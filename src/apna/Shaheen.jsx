@@ -156,7 +156,7 @@ const products = [
   Add To Cart
 </button>
 
-              <h2 className="text-center mt-[1rem]">Hope You Like this Product</h2>
+              <h2 className="text-center mt-[1rem]">You talk about this product</h2>
 
               <input
                 type="text"

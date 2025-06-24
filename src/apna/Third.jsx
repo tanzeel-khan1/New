@@ -147,7 +147,25 @@ className="h-[10rem] w-[70%] ml-[2rem] rounded-[20px] "
         ))}
       </div>
 
+<section className="h-[17rem] w-[70%]  rounded-[10px]  border border-black  mt-[5rem] ml-[5.3rem] mb-[1rem] flex">
+  <div  className="h-[17rem] w-[50%] ">
+    <p className="font-light pl-[3rem] pt-[1rem]">Featured</p>
+    <h1 className="font-bold ml-[3rem] pt-[0.3rem] text-blue-700 text-2xl ">ebay</h1>
+   <h1 className="font-bold ml-[3rem] pt-[0.3rem] text-black-900 text-2xl ">Deals made easy all Year long </h1>
+    <p className="font-light pl-[3rem] pt-[1rem]">Free shopping. Best Priceess</p>
 
+<button className="h-[3rem] w-[30%] border border-black  mt-[1rem] ml-[3rem] rounded-[50px]
+  hover:bg-black hover:text-white hover:border-black-600 transition duration-300 ease-in-out">
+  Get Your Things
+</button>
+
+
+
+  </div>
+  <img src="apna hai .png"
+  className="w-[50%] rounded-[10px]" 
+  />
+</section>
 
         </>
     )
