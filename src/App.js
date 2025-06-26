@@ -64,6 +64,8 @@ import Cart from './apna/Cart';
 import Profile from './apna/Profile';   
 import Four from './apna/Four';
 import Naseem from "./apna/Naseem"
+import Watch from './apna/Watch';
+import Haris from "./apna/Haris"
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -84,6 +86,7 @@ function App() {
               <Second />
               <Third />
               <Four/>
+              <Watch/>
             </>
           }
         />
@@ -100,6 +103,10 @@ function App() {
          <Route
           path="/Naseem"
           element={<Naseem onAddToCart={handleAddToCart} />}
+        />
+        <Route
+          path="/Haris"
+          element={<Haris onAddToCart={handleAddToCart} />}
         />
 
         <Route
