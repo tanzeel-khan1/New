@@ -15,7 +15,7 @@ const Practice = ({ onClose, onLoginSuccess }) => {
     setError("");
 
     setSuccess("");
-
+// ==========================API =====================================================
     const url = isSignup
     
       ? "http://127.0.0.1:8000/signup"
@@ -86,8 +86,7 @@ const Practice = ({ onClose, onLoginSuccess }) => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             style={styles.input}
-            required
-          />
+            required/>
 
           <input
             type="password"
@@ -95,8 +94,7 @@ const Practice = ({ onClose, onLoginSuccess }) => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             style={styles.input}
-            required
-          />
+            required />
 
           <button type="submit" style={styles.button}>
             {isSignup ? "Sign Up" : "Login"}
@@ -116,6 +114,8 @@ const Practice = ({ onClose, onLoginSuccess }) => {
           {error && <p style={styles.error}>{error}</p>}
           {success && <p style={styles.success}>{success}</p>}
         </form>
+
+        
       </div>
     </div>
   );
