@@ -102,11 +102,11 @@ function Second() {
         {products.slice(0, visibleCount).map((item) => (
           <div
             key={item.id}
-            className="h-[20rem] w-[16%] grid bg-gray-100 rounded-[10px] hover:scale-105 transition duration-{ms}
+            className="h-[20rem] w-[16%] grid  rounded-[10px] hover:scale-105 transition duration-{ms}
  shadow-md  shadow-[rgba(3,2,4,0.3)]
 ">
             <img
-              className="h-[10rem] w-[50%] rounded-[50%] mt-[2rem] mx-auto"
+              className="h-[10rem] w-[90%] rounded-[10%] mt-[2rem] mx-auto"
               src={item.img}/>
             <h1 className="text-center mt-[0.1rem] font-semibold">{item.des}</h1>
              <button
