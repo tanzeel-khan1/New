@@ -6,21 +6,21 @@ const fetchUsers = async () => {
      return res.data;
 };
 
-const UsersList = () => {
+const TNQ = () => {
   const { data,    isLoading,  isError } =  useQuery({
       queryKey: ['users'],
     queryFn:  fetchUsers,
-    // staleTime: 50000000, // IS KY BAD HI UPADATE HO GA ! 
-    // refetchInterval : 1000, // JAB TAB HUN HAIN UPADTE HOGA ! 
-    // refetchIntervalInBackground : true, // BACKGROUND MAI UPDATE HOGA  ! (POLLING)
+    // staleTime: 5000,
+    // refetchInterval: 2000,
+    // refetchIntervalInBackground: true,
   });
+
+
   if (isLoading) return <p className="text-yellow-600">Loading...</p>;
   if (isError) return <p className="text-red-600">Something went wrong</p>;
 
 
  
-
-  
 
   return (
     <div className="p-4">
@@ -50,4 +50,4 @@ const UsersList = () => {
   );
 };
 
-export default UsersList;
+export default TNQ;

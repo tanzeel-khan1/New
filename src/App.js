@@ -1,14 +1,22 @@
-import Query from "./api/Query"
+import React from "react";
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import TNQ from "./api/TNQ";
+const queryClient = new QueryClient();
 
-function App(){
-  return(
-    <>
-    <h1>hELLO</h1>
-    <Query/>
-    </>
-  )
+
+function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+<TNQ/>      
+     <ReactQueryDevtools initialIsOpen={false} />
+
+    </QueryClientProvider>
+  );
 }
-export default App
+
+export default App;
+
 
 
 // import React, { useState } from 'react';
