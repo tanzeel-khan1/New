@@ -33,7 +33,7 @@ function Nav({ cartCount }) {
     <>
       <nav className="h-[5rem] w-[90%] bg-[#C0C9EE] ml-[3.3rem] mt-[1rem] rounded-[10px] flex items-center">
         <a href="#" className="flex font-normal ml-[3rem] text-[1.3rem] text-[#131D4F]">
-          Apna<h1 className="font-black text-blue-400 ml-1">X</h1>Hai
+          Apna<h1 className="font-black text-blue-400 ">X</h1>Hai
         </a>
 
         <ul className="flex gap-[2rem] ml-[3rem]">

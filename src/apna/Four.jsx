@@ -131,7 +131,7 @@ function Four(){
 ">Shop pre-loved sneakers for an everyday fit or a major flex.
 </p>
 <button onClick={() => goNav()} className="font-serif
- h-[3rem] w-[12rem] bg-white rounded-[30px] text-black  mt-[2rem] text-2xl ml-[4rem] hover:bg-blue-600 text-white w-[60%] mx-auto,  " > Check 'em Out</button>
+ h-[3rem] w-[12rem] bg-blue-400 rounded-[30px] text-black  mt-[2rem] text-2xl ml-[4rem] hover:bg-blue-600 text-white w-[60%] mx-auto,  " > Check 'em Out</button>
 
       </div>
 

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-function Haris({onAddToCart}) {
+function Saim({onAddToCart}) {
 const products = [
         {
           id: 1,
-            img: "https://i.ebayimg.com/images/g/EWIAAeSw5udoUiL0/s-l960.webp",
-          des: "Rolex Submariner Date",
+         img: "https://bluefery.com/cdn/shop/files/1_0ffa3122-9740-4278-b16d-e09b77a77a7f.png?v=1734418925",
+          des: "Baroque - 3PC Lawn Embroidered Suit - BFU0068",
                 button: "Full View",
  price:"29933",
                     add: "Add To Cart"
@@ -12,8 +12,8 @@ const products = [
         },
         {
           id: 2,
-           img: "https://i.ebayimg.com/images/g/eccAAOSwWMVnjpYV/s-l960.webp",
-          des: "Rolex Submariner Date Steel Green",
+            img: "https://bluefery.com/cdn/shop/files/1_f78d75c2-fcdc-4db7-a6ba-1b947c5fc9b2.png?v=1750146851",
+          des: "QalamKar - 3PC Lawn ChickenKari",
                 button: "Full View",
      price:"23189",
                     add: "Add To Cart"
@@ -21,8 +21,8 @@ const products = [
         },
         {
           id: 3,
-           img: "https://assets.ajio.com/medias/sys_master/root/20231117/7PMF/65577b45afa4cf41f59025b3/-473Wx593H-469457000-blue-MODEL.jpg",
-          des: "Blue Dial Analogue Fashion Watch For Men",
+             img: "https://bluefery.com/cdn/shop/files/1_5864ca21-fd2f-43dc-af61-c3b31ed4edc1.png?v=1748076037",
+          des: "LLYS - 3PC Lawn Embroidered Suit- BFB0",
                 button: "Full View",
          price:"2343",
                     add: "Add To Cart"
@@ -30,8 +30,8 @@ const products = [
         },
         {
           id: 4,
-         img: "https://i.ebayimg.com/images/g/CWAAAeSwbMZoVZiT/s-l960.webp",
-          des: "GRAND SEIKO SBGA059 GRAND",
+         img: "https://bluefery.com/cdn/shop/files/89.png?v=1694068631",
+          des: "Sapphire - 3PC ",
                 button: "Full View",
      price:"237833",
                     add: "Add To Cart"
@@ -39,16 +39,16 @@ const products = [
         },
         {
           id: 5,
-          img: "https://i.ebayimg.com/images/g/nFAAAeSwrYdoWN1K/s-l960.webp",
-          des: "Grand Seiko SBGA227 822722",
+         img: "https://bluefery.com/cdn/shop/files/98_ea69859f-4a31-405c-8b43-a169b9d69a09.png?v=1738910013",
+          des: "Sapphire - 3PC Lawn ",
           button: "Full View",
            price:"2453",
                     add: "Add To Cart"
         },
         {
           id: 6,
-           img: "https://i.ebayimg.com/images/g/f-gAAOSwO2poUdxq/s-l1600.webp",
-          des: "Grand Seiko Heritage",
+           img: "https://bluefery.com/cdn/shop/files/7_879a8592-41ad-4892-9991-6d1af4866cb1.png?v=1746432583",
+          des: "Allys - 3PC Lawn",
          button: "Full View",
           price:"2033",
                     add: "Add To Cart"
@@ -56,8 +56,8 @@ const products = [
         },
         {
           id: 7,
-           img: "https://i.ebayimg.com/images/g/CoIAAOSwM3JoUe9i/s-l1600.webp",
-          des: "Grand Seiko Evolution 9 Hi-Beat Anniv",
+          img: "https://bluefery.com/cdn/shop/files/1_b87b71f4-b26f-4ddc-a995-7bf1bf660862.png?v=1744703005",
+          des: "Mohagni - 3PC Lawn",
         button: "Full View",
          price:"233323",
                     add: "Add To Cart"
@@ -177,4 +177,4 @@ const products = [
   );
 }
 
-export default Haris;
+export default Saim;
