@@ -22,7 +22,7 @@ const UsersList = () => {
   const { data, isLoading, isError } = useQuery({
     queryKey: ['users'],
     queryFn: fetchUsers,
-    staleTime: 10000,
+    staleTime: 4000,
   });
 
   // Create Mutation
@@ -67,7 +67,7 @@ const UsersList = () => {
         onClick={() => setShowForm((prev) => !prev)}
         className="mb-4 px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 transition"
       >
-        {showForm ? "Close Form" : "Create New User"}
+        {showForm ? "Close Form" : "➕ Create New User"}
       </button>
 
       {/* User Create Form */}
@@ -102,7 +102,7 @@ const UsersList = () => {
             onClick={handleCreate}
             className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"
           >
-             Create User
+            ✅ Create User
           </button>
         </div>
       )}
