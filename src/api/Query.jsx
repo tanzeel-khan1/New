@@ -11,7 +11,7 @@ const UsersList = () => {
       queryKey: ['users'],
     queryFn:  fetchUsers,
     // staleTime: 50000000, // IS KY BAD HI UPADATE HO GA ! 
-    // refetchInterval : 1000, // JAB TAB HUN HAIN UPADTE HOGA ! 
+    // refetchInterval : 1000, // JAB TAB HUN HAIN UPADTE HOGA ! (POLLING)
     // refetchIntervalInBackground : true, // BACKGROUND MAI UPDATE HOGA  ! (POLLING)
   });
   if (isLoading) return <p className="text-yellow-600">Loading...</p>;
