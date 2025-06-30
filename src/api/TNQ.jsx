@@ -16,7 +16,6 @@ const UsersList = () => {
   const { data, isLoading, isError } = useQuery({
     queryKey: ['users'],
     queryFn: fetchUsers,
-    staleTime: 40000,
   });
 
   const deleteMutation = useMutation({
