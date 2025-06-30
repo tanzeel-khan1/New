@@ -10,6 +10,12 @@ const SignUpForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+
+
+
+
+    
     
     setError("");
     setSuccess("");

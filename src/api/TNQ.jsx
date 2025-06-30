@@ -49,14 +49,13 @@ const UsersList = () => {
             <span>{user.address.city}</span>
             <button
               onClick={() => deleteMutation.mutate(user.id)}
-              className="text-sm text-white bg-red-500 px-2 py-1 rounded" >
-              Delete
-            </button>
-          </li>
+              className="text-sm text-white bg-red-500 px-2 py-1 rounded" >Delete </button>
+                       </li>
         ))}
       </ul>
     </div>
   );
+
 };
 
 export default UsersList;
