@@ -1,8 +1,6 @@
 import React from "react";
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-// import TNQ from "./api/TNQ";
-// import { Form } from "react-hook-form";
 import Form from "./api/Form"
 const queryClient = new QueryClient();
 
@@ -10,7 +8,6 @@ const queryClient = new QueryClient();
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-{/* <TNQ/>       */}
 <Form/>
      <ReactQueryDevtools initialIsOpen={false} />
 

@@ -6,7 +6,24 @@ const SignUpForm = () => {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
+  const [success, setSuccess] = useState("")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,13 +45,13 @@ const SignUpForm = () => {
 
 
       });
-      setSuccess("Signup successful ✅");
+      setSuccess("Signup successful ");
       setName("");
       setEmail("");
       setPassword("");
     } catch (err) {
       setError(
-        err.response?.data?.detail || "Signup failed ❌. Server error."
+        err.response?.data?.detail || "Signup failed . Server error."
       );
     }
   };

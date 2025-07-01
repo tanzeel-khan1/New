@@ -26,9 +26,16 @@ const UsersList = () => {
       });
     },
   });
+  
 
-  if (isLoading) return <p className="text-yellow-600">Loading...</p>;
-  if (isError) return <p className="text-red-600">Something went wrong</p>;
+
+
+
+
+
+
+  if (isLoading) return <p className="text-yellow-600">Loading</p>
+  if (isError) return <p className="text-red-600">Something went wrong</p>
 
   return (
     <div className="p-4">

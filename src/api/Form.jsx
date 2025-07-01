@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import axios from "axios";
-import { useMutation } from "@tanstack/react-query";
+import axios from "axios"
+import { useMutation } from "@tanstack/react-query"
 
 const SignupForm = () => {
   const [form, setForm] = useState({
     name: "",
     email: "",
-    password: "",
+    password: ""
   });
 
   const [showMessage, setShowMessage] = useState(false); 
