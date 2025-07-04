@@ -1,75 +1,163 @@
 import React, { useState } from "react";
-import axios from "axios"
-import { useMutation } from "@tanstack/react-query"
+import axios from "axios";
+import { useMutation } from "@tanstack/react-query";
 
-const SignupForm = () => {
-  const [form, setForm] = useState({
+const AuthForm = () => {
+  const [isLogin, setIsLogin] = useState(true);
+  const [message, setMessage] = useState("");
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
-    password: ""
+    phone: "",
+    password: "",
   });
-
-  const [showMessage, setShowMessage] = useState(false); 
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setForm((prev) => ({
+    setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
   };
 
-  const signupUser = async (userData) => {
-    const response = await axios.post("http://localhost:5000/api/auth/register", userData);
+  const loginUser = async (data) => {
+    const response = await axios.post("http://localhost:5000/api/auth/login", data);
+    return response.data;
+  };
+
+  const signupUser = async (data) => {
+    const response = await axios.post("http://localhost:5000/api/auth/register", data);
     return response.data;
   };
 
   const mutation = useMutation({
-    mutationFn: signupUser,
+    mutationFn: isLogin ? loginUser : signupUser,
     onSuccess: (data) => {
-      setShowMessage(true); 
-      console.log(data);
-      alert("sign successfull")
+      setMessage(`${isLogin ? "Login" : "Signup"} Successful!`);
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        password: "",
+      });
     },
     onError: (error) => {
-      alert("Signup failed: " + error.message);
+      setMessage(error.response?.data?.message || "Something went wrong");
     },
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    mutation.mutate(form);
+    const dataToSend = isLogin
+      ? { email: formData.email, password: formData.password }
+      : formData;
+
+    mutation.mutate(dataToSend);
   };
 
   return (
-    <div style={{ maxWidth: 400, margin: "auto", marginTop: "3rem" }}>
-      <h2>Signup Form</h2>
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <form onSubmit={handleSubmit} className="bg-white p-6 rounded-xl shadow-md w-96">
+        <h2 className="text-2xl font-bold mb-6 text-center">
+          {isLogin ? "Login" : "Signup"}
+        </h2>
 
-      {showMessage && <p>HI</p>} 
+        {!isLogin && (
+          <>
+          
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              className="w-full mb-4 p-2 border border-gray-300 rounded"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
 
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Name:</label><br />
-          <input type="text" name="name" value={form.name} onChange={handleChange} required />
-        </div>
-        <div>
-          <label>Email:</label><br />
-         
-         
-          <input type="email" name="email" value={form.email} onChange={handleChange} required />
-        </div>
-        <div>
-          <label>Password:</label><br />
-          <input type="password" name="password" value={form.password} onChange={handleChange} required />
-        </div>
-        <button type="submit" disabled={mutation.isLoading}>
-          {mutation.isLoading ? "Signing up..." : "Sign Up"}
+       
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              className="w-full mb-4 p-2 border border-gray-300 rounded"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+
+            {/* Phone */}
+            <input
+              type="text"
+              name="phone"
+              placeholder="Phone"
+              className="w-full mb-4 p-2 border border-gray-300 rounded"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+            />
+          </>
+        )}
+
+        {isLogin && (
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            className="w-full mb-4 p-2 border border-gray-300 rounded"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        )}
+
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          className="w-full mb-4 p-2 border border-gray-300 rounded"
+          value={formData.password}
+          onChange={handleChange}
+          required
+        />
+
+     
+        <button
+          type="submit"
+          className="w-full bg-blue-500 hover:bg-blue-600 text-white p-2 rounded mb-3"
+          disabled={mutation.isLoading}
+        >
+          {mutation.isLoading
+            ? isLogin
+              ? "Logging in..."
+              : "Signing up..."
+            : isLogin
+            ? "Login"
+            : "Signup"}
         </button>
+
+      
+        <p className="text-sm text-center">
+          {isLogin ? "Don't have an account?" : "Already have an account?"}{" "}
+          <button
+            type="button"
+            className="text-blue-500 underline"
+            onClick={() => {
+              setIsLogin(!isLogin);
+              setMessage("");
+            }}
+          >
+            {isLogin ? "Signup" : "Login"}
+          </button>
+        </p>
+
+       
+        {message && (
+          <p className="text-center text-green-600 font-medium mt-3">{message}</p>
+        )}
       </form>
-
-
     </div>
   );
 };
 
-export default SignupForm;
+export default AuthForm;
