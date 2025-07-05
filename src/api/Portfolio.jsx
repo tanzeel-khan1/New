@@ -5,13 +5,11 @@ const Portfolio = () => {
   return (
     <div className="min-h-screen bg-gray-900 text-white font-sans px-4 py-12">
       <div className="max-w-4xl mx-auto">
-        {/* Header */}
         <motion.div
           className="text-center"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
+          transition={{ duration: 0.8 }}  >
           <img
             src="https://via.placeholder.com/150"
             alt="Profile"
@@ -21,13 +19,11 @@ const Portfolio = () => {
           <p className="text-lg text-gray-300">Frontend Developer</p>
         </motion.div>
 
-        {/* About */}
         <motion.div
           className="mt-10"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
-        >
+          transition={{ duration: 0.6 }} >
           <h2 className="text-2xl font-semibold text-teal-300 mb-2">About Me</h2>
           <p className="text-gray-400">
             Passionate frontend developer skilled in creating responsive and modern user interfaces using React, Tailwind CSS, and animation libraries. Always eager to learn new technologies and improve UI/UX.
@@ -39,8 +35,7 @@ const Portfolio = () => {
           className="mt-10"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.6 }}
-        >
+          transition={{ delay: 0.2, duration: 0.6 }}>
           <h2 className="text-2xl font-semibold text-teal-300 mb-4">Skills</h2>
           <ul className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-gray-300">
             <li className="bg-gray-800 px-4 py-2 rounded-lg">React</li>
@@ -77,13 +72,15 @@ const Portfolio = () => {
           className="mt-10 text-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.6, duration: 0.6 }}
-        >
+          transition={{ delay: 0.6, duration: 0.6 }}>
           <h2 className="text-2xl font-semibold text-teal-300 mb-2">Contact</h2>
           <p className="text-gray-400">Email: tanzeelkhan@example.com</p>
           <p className="text-gray-400">GitHub: github.com/tanzeelkhan</p>
         </motion.div>
+
       </div>
+
+
     </div>
   );
 };

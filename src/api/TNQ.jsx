@@ -27,13 +27,6 @@ const UsersList = () => {
     },
   });
   
-
-
-
-
-
-
-
   if (isLoading) return <p className="text-yellow-600">Loading</p>
   if (isError) return <p className="text-red-600">Something went wrong</p>
 
@@ -45,7 +38,6 @@ const UsersList = () => {
         <span className="text-blue-700">City</span>
         <span className="text-gray-700">Action</span>
       </div>
-
       <ul className="space-y-2">
         {data.map((user) => (
           <li
