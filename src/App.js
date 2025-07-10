@@ -1,14 +1,13 @@
 import React from "react";
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import Form from "./api/Form"
+// import Form from "./api/Form"
 const queryClient = new QueryClient();
-
-
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-<Form/>
+      <img src="new.gif" className="h-36"/>
+{/* <Form/> */}
      <ReactQueryDevtools initialIsOpen={false} />
 
     </QueryClientProvider>
