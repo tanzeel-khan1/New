@@ -37,15 +37,27 @@
 // );
 // import './index.css';
 
-import './index.css';   // Tailwind css import pehle
+// main.jsx ya index.js
 
+// main.jsx
+// main.jsx
+import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Provider } from 'react-redux';
 import App from './App';
+import './index.css';
+
+import { Provider } from 'react-redux';
 import Store from './app/Store';
+
+import { BrowserRouter } from 'react-router-dom';
+import { AuthProvider } from "./projuct/context/AuthContext"; // ✅ path should be correct
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={Store}>
-    <App />
+    <BrowserRouter>
+      <AuthProvider>
+        <App />
+      </AuthProvider>
+    </BrowserRouter>
   </Provider>
 );

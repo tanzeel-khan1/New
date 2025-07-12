@@ -1,20 +1,40 @@
-import React from "react";
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-// import Form from "./api/Form"
+// App.jsx
+import { Routes, Route } from 'react-router-dom'; // ✅ No BrowserRouter here
+import Navbar from './projuct/Navbar';
+import Home from './projuct/pages/Home';
+import About from './projuct/pages/About';
+import Service from './projuct/pages/Service';
+import Signup from './projuct/pages/Signup';
+import Login from './projuct/pages/Login';
+import Error from './projuct/pages/Error';
+import Logout from './projuct/pages/Logout';
+import Contact from './projuct/pages/Contact';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+
 const queryClient = new QueryClient();
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <img src="new.gif" className="h-36"/>
-{/* <Form/> */}
-     <ReactQueryDevtools initialIsOpen={false} />
-
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/service" element={<Service />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/logout" element={<Logout />} />
+        <Route path="*" element={<Error />} />
+        <Route path="/Contact" element={<Contact/>} />
+      </Routes>
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 }
 
 export default App;
+
 
 
 
