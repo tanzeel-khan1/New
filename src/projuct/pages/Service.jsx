@@ -10,8 +10,7 @@ import {
   Wallet,
   Gift,
   RefreshCcw
-} from 'lucide-react'; // ✅ 8 icons used
-
+} from 'lucide-react'; 
 const services = [
   {
     title: "Fast Delivery",
@@ -73,8 +72,7 @@ const Service = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: index * 0.1 }}
-            className="bg-white p-6 rounded-xl shadow hover:shadow-md transition"
-          >
+            className="bg-white p-6 rounded-xl shadow hover:shadow-md transition" >
             <div className="mb-4">{service.icon}</div>
             <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
             <p className="text-gray-600">{service.description}</p>

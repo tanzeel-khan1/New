@@ -1,5 +1,5 @@
-// App.jsx
-import { Routes, Route } from 'react-router-dom'; // ✅ No BrowserRouter here
+
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './projuct/Navbar';
 import Home from './projuct/pages/Home';
 import About from './projuct/pages/About';
@@ -9,6 +9,11 @@ import Login from './projuct/pages/Login';
 import Error from './projuct/pages/Error';
 import Logout from './projuct/pages/Logout';
 import Contact from './projuct/pages/Contact';
+import Step1 from './projuct/Products/step1';
+
+import { CartProvider } from './projuct/context/CartContext'; // 👈 make sure path is correct
+import { AuthProvider } from './projuct/context/AuthContext'; // 👈 if you're using login
+
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
@@ -16,20 +21,27 @@ const queryClient = new QueryClient();
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/service" element={<Service />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/logout" element={<Logout />} />
-        <Route path="*" element={<Error />} />
-        <Route path="/Contact" element={<Contact/>} />
-      </Routes>
-      <ReactQueryDevtools initialIsOpen={false} />
-    </QueryClientProvider>
+    <AuthProvider>
+      <CartProvider>
+        <QueryClientProvider client={queryClient}>
+          <Navbar />
+
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/service" element={<Service />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/logout" element={<Logout />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/products" element={<Step1 />} /> {/* ✅ this is your product page */}
+            <Route path="*" element={<Error />} />
+          </Routes>
+<Step1/>
+          <ReactQueryDevtools initialIsOpen={false} />
+        </QueryClientProvider>
+      </CartProvider>
+    </AuthProvider>
   );
 }
 

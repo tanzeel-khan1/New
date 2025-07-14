@@ -1,4 +1,3 @@
-// projuct/pages/Login.jsx
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import axios from 'axios';
@@ -31,13 +30,13 @@ const Login = () => {
       const token = res.data.token;
       localStorage.setItem('token', token);
 
-      setMessage('✅ Login successful!');
+      setMessage(' Login successful!');
       setError('');
 
       navigate('/');
 
     } catch (err) {
-      setError('❌ Login failed. ' + (err.response?.data?.message || 'Please try again.'));
+      setError(' Login failed. ' + (err.response?.data?.message || 'Please try again.'));
       setMessage('');
     }
   };

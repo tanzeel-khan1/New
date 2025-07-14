@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.babar{
+      display: inline-block;
+  animation: rotate 1s linear infinite;
+  color: blue;
+  margin-right: 1rem;
+}
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
