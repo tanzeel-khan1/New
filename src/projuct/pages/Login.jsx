@@ -6,7 +6,7 @@ import { useNavigate, Link } from 'react-router-dom';
 const Login = () => {
   const navigate = useNavigate();
 
-  const [formData, setFormData] = useState({
+        const [formData, setFormData] = useState({
     email: '',
     password: '',
   });
@@ -33,6 +33,8 @@ const Login = () => {
       setMessage(' Login successful!');
       setError('');
 
+
+
       navigate('/');
 
     } catch (err) {
@@ -46,9 +48,11 @@ const Login = () => {
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
+        
         transition={{ duration: 0.6 }}
-        className="bg-white p-8 rounded-xl shadow-md w-full max-w-md"
-      >
+
+        className="bg-white p-8 rounded-xl shadow-md w-full max-w-md">
+       
         <h2 className="text-2xl font-bold text-indigo-600 mb-6 text-center">Log In</h2>
 
         {error && <p className="text-sm mb-4 text-center text-red-500">{error}</p>}
@@ -64,12 +68,12 @@ const Login = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full border border-gray-300 px-4 py-2 rounded-md"
-            />
+              className="w-full border border-gray-300 px-4 py-2 rounded-md"/>
           </div>
 
           <div>
             <label className="block text-sm font-medium text-gray-700">Password</label>
+           
             <input
               type="password"
               name="password"
@@ -77,16 +81,14 @@ const Login = () => {
               value={formData.password}
               onChange={handleChange}
               required
-              className="w-full border border-gray-300 px-4 py-2 rounded-md"
-            />
+              className="w-full border border-gray-300 px-4 py-2 rounded-md"/>
           </div>
 
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             type="submit"
-            className="w-full bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-indigo-700 transition"
-          >
+            className="w-full bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-indigo-700 transition">
             Log In
           </motion.button>
         </form>

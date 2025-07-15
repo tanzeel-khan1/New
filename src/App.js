@@ -16,6 +16,7 @@ import { AuthProvider } from './projuct/context/AuthContext'; // 👈 if you're 
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import Full1 from './projuct/Products/Full1';
 
 const queryClient = new QueryClient();
 
@@ -34,8 +35,9 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/logout" element={<Logout />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/products" element={<Step1 />} /> {/* ✅ this is your product page */}
+            <Route path="/products" element={<Step1 />} /> 
             <Route path="*" element={<Error />} />
+            <Route path="/view" element={<Full1 />} />
           </Routes>
 <Step1/>
           <ReactQueryDevtools initialIsOpen={false} />

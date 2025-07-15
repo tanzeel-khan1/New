@@ -9,8 +9,10 @@ import './pages/Home.css'
 function Navbar() {
   const navigate = useNavigate();
   const { isLoggedIn, logout } = useAuth();
+  
   const { cartItems, removeFromCart } = useCart();
   const [menuOpen, setMenuOpen] = useState(false);
+
   const [showCart, setShowCart] = useState(false);
 
   const handleLogout = () => {
