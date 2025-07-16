@@ -1,6 +1,4 @@
-
-
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './projuct/Navbar';
 import Home from './projuct/pages/Home';
 import About from './projuct/pages/About';
@@ -12,21 +10,23 @@ import Logout from './projuct/pages/Logout';
 import Contact from './projuct/pages/Contact';
 import Step1 from './projuct/Products/step1';
 import Full1 from './projuct/Products/Full1';
-
 import { CartProvider } from './projuct/context/CartContext';
 import { AuthProvider } from './projuct/context/AuthContext';
-
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-
 const queryClient = new QueryClient();
 
 function App() {
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+
   return (
     <AuthProvider>
       <CartProvider>
         <QueryClientProvider client={queryClient}>
+          
           <Navbar />
+
 
           <Routes>
             <Route path="/" element={<Home />} />
@@ -34,13 +34,15 @@ function App() {
             <Route path="/service" element={<Service />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
+
+
             <Route path="/logout" element={<Logout />} />
             <Route path="/contact" element={<Contact />} />
-            {/* <Route path="/products" element={<Step1 />} /> */}
-            <Route path="/view/:id" element={<Full1 />} /> 
+
+            <Route path="/view/:id" element={<Full1 />} />
             <Route path="*" element={<Error />} />
           </Routes>
-          <Step1/>
+          {isHome && <Step1 />}
 
           <ReactQueryDevtools initialIsOpen={false} />
         </QueryClientProvider>
