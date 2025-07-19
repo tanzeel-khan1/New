@@ -7,7 +7,9 @@ import { useQuery } from "@tanstack/react-query";
 
 const ProductCard = ({ product }) => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
+
   const navigate = useNavigate();
+
 
   const handleFullView = () => {
     navigate(`/view/${product.id}`);
@@ -19,29 +21,30 @@ const ProductCard = ({ product }) => {
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5 }}
-      className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition"
-    >
+      className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
       <div className="p-4 flex flex-col gap-2">
         <img
           src={product.img}
           className="h-96 w-full object-cover"
-          alt={product.name}
-        />
+          alt={product.name} />
         <h1 className="text-cyan-600 text-3xl font-semibold">{product.name}</h1>
         <h2 className="text-blue-800 text-3xl">${product.price}</h2>
         <button
           onClick={handleFullView}
-          className="mt-auto bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition"
-        >
+          className="mt-auto bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">
           Full View
         </button>
+
+
       </div>
+
     </motion.div>
   );
 };
 
 const fetchProducts = async () => {
   const { data } = await axios.get("http://localhost:7000/api/auth/product");
+
   return data;
 };
 
@@ -54,6 +57,8 @@ const Step1 = () => {
   const [visibleCount, setVisibleCount] = React.useState(5);
 
   const handleSeeMore = () => {
+
+
     setVisibleCount((prev) => prev + 5);
   };
 
@@ -81,10 +86,14 @@ const Step1 = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={handleSeeMore}
-            className="bg-gray-800 text-white px-6 py-2 rounded-lg hover:bg-gray-900 transition"
-          >
+            className="bg-gray-800 text-white px-6 py-2 rounded-lg hover:bg-gray-900 transition">
+
+
             See More
+
           </motion.button>
+
+          
         </div>
       )}
     </div>

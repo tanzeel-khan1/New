@@ -1,4 +1,3 @@
-// projuct/pages/Contact.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Clock } from 'lucide-react';
@@ -10,8 +9,7 @@ const Contact = () => {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow"
-      >
+        className="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow">
         <h1 className="text-3xl font-bold text-indigo-700 mb-6 text-center">
           Contact Information
         </h1>
